@@ -13,13 +13,17 @@ handler.buildMap({
   provider: {
     // disableDefaultUI: true
     // pass in other Google Maps API options here
-    "https://maps.googleapis.com/maps/api/js?key=AIzaSyANe409_h7ySY9h80bWYjeZyeKcKwDwX78&callback=initMap"
   },
   internal: {
     id: 'map-container'
   }
 },
 function initMap(){
+  var uluru = {lat: 39.30941765, lng: -76.65104057};
+  map = new google.maps.Map(document.getElementByID{'map'},{
+                            zoom: 10,
+                            center: uluru
+                            });
   markers = handler.addMarkers([
     {
       "lat": 39.30941765,
@@ -61,6 +65,10 @@ function initMap(){
   handler.fitMapToBounds();
   handler.getMap().setZoom(19);
 }
+
 );
+  </script>
+<script async defer
+        src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyANe409_h7ySY9h80bWYjeZyeKcKwDwX78&callback=initMap">
 
 </script>
