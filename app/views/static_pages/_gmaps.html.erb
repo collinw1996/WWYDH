@@ -24,10 +24,10 @@ function initMap(){
     zoom: 10,
     center: uluru
  });
- var markers = new google.maps.Marker([
-    {
-      position: uluru,
-      map: map}
+  var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
       /*"lat": 39.30941765,
       "lng": -76.65104057,
       "infowindow": "View this Project"
