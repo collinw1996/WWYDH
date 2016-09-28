@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<script type="text/javascript">
+<script >
 
 /*handler = Gmaps.build('Google');
 handler.buildMap({
@@ -20,13 +20,15 @@ handler.buildMap({
 },*/
 function initMap(){
   var uluru = {lat: 39.30941765, lng: -76.65104057};
-  map = new google.maps.Map(document.getElementByID{'map'},{
-                            zoom: 10,
-                            center: uluru
-                            });
+  var map = new google.maps.Map(document.getElementByID{'map'},{
+    zoom: 10,
+    center: uluru
+ });
  var markers = new google.maps.Marker([
     {
-      "lat": 39.30941765,
+      position: uluru,
+      map: map}
+      /*"lat": 39.30941765,
       "lng": -76.65104057,
       "infowindow": "View this Project"
     },
@@ -64,9 +66,10 @@ function initMap(){
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
   handler.getMap().setZoom(19);
-}
+}*/
 
 );
+   }
   </script>
 <script async defer
         src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyANe409_h7ySY9h80bWYjeZyeKcKwDwX78&callback=initMap">
