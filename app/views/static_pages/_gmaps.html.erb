@@ -8,7 +8,7 @@
 
 <script type="text/javascript">
 
-handler = Gmaps.build('Google');
+/*handler = Gmaps.build('Google');
 handler.buildMap({
   provider: {
     // disableDefaultUI: true
@@ -17,14 +17,14 @@ handler.buildMap({
   internal: {
     id: 'map-container'
   }
-},
+},*/
 function initMap(){
   var uluru = {lat: 39.30941765, lng: -76.65104057};
   map = new google.maps.Map(document.getElementByID{'map'},{
                             zoom: 10,
                             center: uluru
                             });
-  markers = handler.addMarkers([
+ var markers = new google.maps.Marker([
     {
       "lat": 39.30941765,
       "lng": -76.65104057,
