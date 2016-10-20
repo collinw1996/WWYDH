@@ -8,8 +8,8 @@
         <div class="account-wall col-lg-10 col-xs-offset-1 col-sm-6 col-sm-offset-1
                             col-md-4 col-md-offset-1">
 
-        <span class="pic">
-            <%= image_tag("https://maps.googleapis.com/maps/api/streetview?size=400x400&location=#{@vacant.latitude},#{@vacant.longitude}&fov=90", :class => "style_image") %>
+         <span class="pic">
+            <%= render 'streetview' %>
         </span>
 
         <span class="infoContainer">
