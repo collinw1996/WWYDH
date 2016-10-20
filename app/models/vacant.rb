@@ -6,12 +6,12 @@ class Vacant < ActiveRecord::Base
     search_params = get_search_params(params)
 
     if search_params.empty?
-      vacants = Vacant.state_only
+      vacants = Vacant.all
     else
 			vacants = Vacant.by_full_address(search_params[:full_address])
 									    .by_neighborhood(search_params[:neighborhood])
 				              .by_police_district(search_params[:police_district])
-                      .state_only
+                    #  .state_only
 		end
 
 		vacants
@@ -43,8 +43,8 @@ class Vacant < ActiveRecord::Base
 		Vacant.where('police_district LIKE ?', "%#{police_district.upcase}%")
 	end
 
-  def self.state_only
-    return Vacant.where('owner LIKE ?', "%MAYOR AND CITY%")
-  end
+ # def self.state_only
+   # return Vacant.where('owner LIKE ?', "%MAYOR AND CITY%")
+ # end
 
 end
