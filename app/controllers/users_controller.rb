@@ -49,14 +49,11 @@ class UsersController < ApplicationController
 
   def confirm_email
     user = User.find_by_confirm_token(params[:id])
-    if user
-      user.email_activate
-      flash[:success] = "Welcome to WWYDH! Your accout has been confirmed."
+   
+     
+     flash[:success] = "Welcome to WWYDH! Your accout has been confirmed."
       redirect_to root_url
-    else
-      flash[:error] = "User does not exist."
-      redirect_to root_url
-    end
+    
   end
 
 	private
