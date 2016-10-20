@@ -1,0 +1,56 @@
+<% provide(:title, @vacant.full_address) %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Street View side-by-side</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map, #pano {
+        float: left;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pano">
+        
+    </div>
+   
+    <script type="text/javascript" charset="utf-8">
+      function initialize() {
+        var lat1 = <%= @vacant.latitude %>;
+        var lng1 = <%= @vacant.longitude %>;
+        var fenway = {lat: <%= @vacant.longitude %> , lng: <%= @vacant.latitude %> };
+        var map = new google.maps.Map(document.getElementById('map-canvas'), {
+          center: fenway,
+          zoom: 14
+        });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'), {
+              position: fenway,
+              pov: {
+                heading: 34,
+                pitch: 10
+              }
+            });
+         var marker = new google.maps.Marker({
+              position: fenway,
+               map: map
+    
+            });
+        
+        map.setStreetView(panorama);
+        marker.setMap(map);
+      }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5i_sFtlVXTtUhhhfj2cDaYrYj18PLI68&callback=initialize">
+    </script>
+  </body>
+</html>
