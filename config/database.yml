@@ -10,16 +10,10 @@ default: &default
   timeout: 5000
 
 development:
-  #  <<: *default
-  #  database: db/development.sqlite3
   adapter: postgresql
-  pool: 5
-  timeout: 5000
-  username: b_server
-  password: Towson!B2016
-  database: wwydh
-  host: wwydh.cmzz0cwtiica.us-east-1.rds.amazonaws.com
-  port: 5432
+  host: localhost
+  username: user
+  database: app-dev
 
 
 # Warning: The database defined as "test" will be erased and
